@@ -1,29 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>GeoAR.js demo</title>
-    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
-    <script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
-    <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>49.28117,?z=18
-    <script>
-        THREEx.ArToolkitContext.baseURL = "https://raw.githack.com/jeromeetienne/ar.js/master/three.js/"
-    </script>
+    <script src="js/aframe.min.js"></script>
+    <script src='js/aframe-ar-nft.js'></script>
+
 </head>
 
-<body style="margin: 0; overflow: hidden;">
-    <a-scene vr-mode-ui="enabled: false" embedded  arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960; debugUIEnabled: false;">
+<body style='margin: 0; overflow: hidden;'>
+    <a-scene
+        vr-mode-ui="enabled: false"
+		embedded
+		arjs='sourceType: webcam; debugUIEnabled: false;'>
 
-    <!--
-    Place Object at Colosseum Roma with the following a-entity:
-     <a-entity gltf-model="./assets/magnemite/scene.gltf" rotation="0 180 0" scale="0.15 0.15 0.15" gps-entity-place="longitude: 12.489820; latitude: 41.892590;" animation-mixer/>
-     -->
-    <a-entity gltf-model="./assets/magnemite/scene.gltf" rotation="0 0 0" scale="0.15 0.15 0.15" gps-entity-place="longitude: 8.17528; latitude: 49.28117;" animation-mixer/>
-    <!-- GLTF model downloaded from: https://raw.githack.com/nicolocarpignoli/location-based-ar-tutorial/master/static-on-html/assets/magnemite.zip
-    created by Nicolò Carpignoli -->
-    <!-- See Tutorial:   https://medium.com/swlh/build-your-location-based-augmented-reality-web-app-a841956eed2c  -->
-    <a-camera gps-camera rotation-reader></a-camera>
+        <a-box material="color: red;" scale="15 15 15" position="0 0 0" gps-entity-place="latitude: 41.890339; longitude: 12.492586;"></a-box>
+        <a-camera gps-camera="simulateLatitude: 41.890890; simulateLongitude: 12.489357;" rotation-reader>
+		</a-camera>
 	</a-scene>
 </body>
-</html>
